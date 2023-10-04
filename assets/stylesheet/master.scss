@@ -1,0 +1,171 @@
+@font-face {
+    font-family: main;
+    src: url(../../font/Typographica-Blp5.ttf);
+}
+body{
+    overflow: hidden;
+}
+.main{
+    // overflow-x: hidden;
+    height: 100vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 20px);
+    .gallery{
+        height: 100vh;
+        display: flex;
+        h2{
+            text-transform: capitalize;
+            font-family: main;
+            font-size: 50px;
+            z-index: 300;
+            position: fixed;
+            width: 100%;
+            color: rgb(7, 7, 229);
+            text-align: center;
+            top: 50%;left: 50%;
+            transform: translate(-50%, -50%);
+            user-select: none;
+        }
+        .picBox{
+            // border: 2px solid red;
+            height: 300vh;
+            @media screen and (max-width: 992px) {
+                height: 200vh;
+            }
+            width: 33%;
+            padding: 5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: space-evenly;
+            position: absolute;
+            &:nth-of-type(1){
+                top: 25%;
+                left: 0;
+                .pic{
+                    >span{
+                        background-position: -16% 0;
+                    }
+                    &:nth-of-type(1){
+                        >span{
+                            background-image: url(../img/portfolio_illustrazione_giulia_tonon_cityscape_df513dddea.jpg);
+                        }
+                    }
+                    &:nth-of-type(2){
+                        >span{
+                            background-image: url(../img/2.jpg);
+                        }
+                    }
+                    &:nth-of-type(3){
+                        >span{
+                            background-image: url(../img/3.jpg);
+                        }
+                    }
+                    &:nth-of-type(4){
+                        >span{
+                            background-image: url(../img/4.jpg);
+                        }
+                    }
+                    &:nth-of-type(5){
+                        >span{
+                            background-image: url(../img/5.jpg);
+                        }
+                    }                    
+                }
+            }
+            &:nth-of-type(2){
+                top: -225%;
+                left: 33.5%;
+                .pic{
+                    >span{
+                        background-position: -50% 0;
+                    }
+                    &:nth-of-type(1){
+                        >span{
+                            background-image: url(../img/6.jpg);
+                        }
+                    }
+                    &:nth-of-type(2){
+                        >span{
+                            background-image: url(../img/7.jpg);
+                        }
+                    }
+                    &:nth-of-type(3){
+                        >span{
+                            background-image: url(../img/8.jpg);
+                        }
+                    }
+                    &:nth-of-type(4){
+                        >span{
+                            background-image: url(../img/9.jpg);
+                        }
+                    }
+                    &:nth-of-type(5){
+                        >span{
+                            background-image: url(../img/10.jpg);
+                        }
+                    }                    
+                }
+            }
+            &:nth-of-type(3){
+                top: 25%;
+                left: 67%;
+                .pic{
+                    >span{
+                        background-position: -88% 0;
+                    }
+                    &:nth-of-type(1){
+                        >span{
+                            background-image: url(../img/11.jpg);
+                        }
+                    }
+                    &:nth-of-type(2){
+                        >span{
+                            background-image: url(../img/12.jpg);
+                        }
+                    }
+                    &:nth-of-type(3){
+                        >span{
+                            background-image: url(../img/13.jpg);
+                        }
+                    }
+                    &:nth-of-type(4){
+                        >span{
+                            background-image: url(../img/14.jpg);
+                        }
+                    }
+                    &:nth-of-type(5){
+                        >span{
+                            background-image: url(../img/15.png);
+                        }
+                    }
+                }
+            }
+            .pic{
+                width: 100%;
+                height: 16%;
+                // border: 2px solid black;
+                position: relative;
+                >span{
+                    display: flex;
+                    width: 100%;height: 100%;
+                    position: absolute;
+                    top: 0;left: 0;
+                    background-size: 50%;
+                    background-attachment: fixed;
+                    &:nth-of-type(2){
+                        filter: hue-rotate(180deg);
+                        -webkit-filter: hue-rotate(180deg);
+                        z-index: 5;
+                        cursor: pointer;
+                        width: 50%; height: 50%;
+                        border-radius: 50%;
+                        border: 2px solid black;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/stylesheet/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/stylesheet/bootstrap.min.css.map">
+    <link rel="stylesheet" href="assets/stylesheet/master.css">
+</head>
+<!-- https://www.giuliatonon.it/ -->
+<body>
+    <main class="col-12 main">
+        <div class="container-fluid container-xxl gallery p-0 position-relative">
+            <div class="row h-100 w-100 m-0">
+                <div class="col-12 h-100 p-0">
+                    <div class="row h-100 w-100 m-0">
+                        <h2>scroll to view all images</h2>
+                        <!-- 3 -->
+                        <div class="col-3 picBox">
+                            <!-- 5 -->
+                            <div class="pic">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="pic">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="pic">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="pic">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="pic">
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="col-3 picBox">
+                            <!-- 5 -->
+                            <div class="pic">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="pic">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="pic">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="pic">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="pic">
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="col-3 picBox">
+                            <!-- 5 -->
+                            <div class="pic">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="pic">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="pic">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="pic">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="pic">
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script>
+
+    let box1 = document.getElementsByClassName('picBox')[0]
+    let box2 = document.getElementsByClassName('picBox')[1]
+    let box3 = document.getElementsByClassName('picBox')[2]
+
+    let x1 = box1.computedStyleMap().get('top').value
+    let x2 = box2.computedStyleMap().get('top').value
+    let x3 = box3.computedStyleMap().get('top').value
+    // console.log(x3);
+    let _main = document.getElementsByTagName('main')[0]
+    _main.addEventListener('scroll', mainScroll)
+    function mainScroll(){
+        let temp = _main.scrollTop
+        // console.log(temp);
+        let heightT = (_main.clientHeight)*3
+        // console.log(heightT);
+        temp = (temp/heightT)*100
+        let x2Final = box2.computedStyleMap().get('top').value
+        // console.log(x2Final);
+        if(x2Final >= '240'){
+            _main.style.overflow = 'hidden'
+            _main.style.width = '100%'
+        }
+        else{
+            box1.style.top = '-' + ((temp/10)-x1) + '%'
+            box2.style.top = (x2 + (temp*6)) + '%'
+            box3.style.top = '-' + ((temp/10)-x3) + '%'
+        }
+    }
+
+    let span = document.querySelectorAll('.pic>span:nth-of-type(2)')
+    // console.log(span);
+    span.forEach(function(val, i){
+        let w = val.offsetWidth/2
+        // console.log(w);
+        val.addEventListener('mousedown', () => {
+            let x = 0
+            let y = 0
+            document.getElementsByTagName('main')[0].addEventListener('mousemove', pic)
+        })
+        val.addEventListener('mouseup', () => {
+            let x = 0
+            let y = 0
+            document.getElementsByTagName('main')[0].removeEventListener('mousemove', pic)
+        })
+
+        function pic(e){
+            x = e.clientX
+            y = e.clientY
+            if(i<5){
+                val.style.top = y - w*5 +'px'
+                val.style.left = x - w*2 +'px'
+            }
+            else if (i>=5 && i<10){
+                val.style.top = y - w*2 +'px'
+                val.style.left = x - w*7.5 +'px'
+            }
+            else{
+                val.style.top = y - w*4.5 +'px'
+                val.style.left = x - w*13.5 +'px'
+            }
+        }
+    })
+</script>
+</html>

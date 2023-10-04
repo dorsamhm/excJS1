@@ -1,0 +1,141 @@
+@font-face {
+  font-family: main;
+  src: url(../../font/Typographica-Blp5.ttf);
+}
+body {
+  overflow: hidden;
+}
+
+.main {
+  height: 100vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 20px);
+}
+.main .gallery {
+  height: 100vh;
+  display: flex;
+}
+.main .gallery h2 {
+  text-transform: capitalize;
+  font-family: main;
+  font-size: 50px;
+  z-index: 300;
+  position: fixed;
+  width: 100%;
+  color: rgb(7, 7, 229);
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.main .gallery .picBox {
+  height: 300vh;
+  width: 33%;
+  padding: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-evenly;
+  position: absolute;
+}
+@media screen and (max-width: 992px) {
+  .main .gallery .picBox {
+    height: 200vh;
+  }
+}
+.main .gallery .picBox:nth-of-type(1) {
+  top: 25%;
+  left: 0;
+}
+.main .gallery .picBox:nth-of-type(1) .pic > span {
+  background-position: -16% 0;
+}
+.main .gallery .picBox:nth-of-type(1) .pic:nth-of-type(1) > span {
+  background-image: url(../img/portfolio_illustrazione_giulia_tonon_cityscape_df513dddea.jpg);
+}
+.main .gallery .picBox:nth-of-type(1) .pic:nth-of-type(2) > span {
+  background-image: url(../img/2.jpg);
+}
+.main .gallery .picBox:nth-of-type(1) .pic:nth-of-type(3) > span {
+  background-image: url(../img/3.jpg);
+}
+.main .gallery .picBox:nth-of-type(1) .pic:nth-of-type(4) > span {
+  background-image: url(../img/4.jpg);
+}
+.main .gallery .picBox:nth-of-type(1) .pic:nth-of-type(5) > span {
+  background-image: url(../img/5.jpg);
+}
+.main .gallery .picBox:nth-of-type(2) {
+  top: -225%;
+  left: 33.5%;
+}
+.main .gallery .picBox:nth-of-type(2) .pic > span {
+  background-position: -50% 0;
+}
+.main .gallery .picBox:nth-of-type(2) .pic:nth-of-type(1) > span {
+  background-image: url(../img/6.jpg);
+}
+.main .gallery .picBox:nth-of-type(2) .pic:nth-of-type(2) > span {
+  background-image: url(../img/7.jpg);
+}
+.main .gallery .picBox:nth-of-type(2) .pic:nth-of-type(3) > span {
+  background-image: url(../img/8.jpg);
+}
+.main .gallery .picBox:nth-of-type(2) .pic:nth-of-type(4) > span {
+  background-image: url(../img/9.jpg);
+}
+.main .gallery .picBox:nth-of-type(2) .pic:nth-of-type(5) > span {
+  background-image: url(../img/10.jpg);
+}
+.main .gallery .picBox:nth-of-type(3) {
+  top: 25%;
+  left: 67%;
+}
+.main .gallery .picBox:nth-of-type(3) .pic > span {
+  background-position: -88% 0;
+}
+.main .gallery .picBox:nth-of-type(3) .pic:nth-of-type(1) > span {
+  background-image: url(../img/11.jpg);
+}
+.main .gallery .picBox:nth-of-type(3) .pic:nth-of-type(2) > span {
+  background-image: url(../img/12.jpg);
+}
+.main .gallery .picBox:nth-of-type(3) .pic:nth-of-type(3) > span {
+  background-image: url(../img/13.jpg);
+}
+.main .gallery .picBox:nth-of-type(3) .pic:nth-of-type(4) > span {
+  background-image: url(../img/14.jpg);
+}
+.main .gallery .picBox:nth-of-type(3) .pic:nth-of-type(5) > span {
+  background-image: url(../img/15.png);
+}
+.main .gallery .picBox .pic {
+  width: 100%;
+  height: 16%;
+  position: relative;
+}
+.main .gallery .picBox .pic > span {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: 50%;
+  background-attachment: fixed;
+}
+.main .gallery .picBox .pic > span:nth-of-type(2) {
+  filter: hue-rotate(180deg);
+  -webkit-filter: hue-rotate(180deg);
+  z-index: 5;
+  cursor: pointer;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  border: 2px solid black;
+}/*# sourceMappingURL=master.css.map */
